@@ -45,3 +45,13 @@ The WER rate should be ignored in this paper since the model is trained on ASR t
 They also evaluated speaker similarity using 5s and 10s ground truth tokens for input and found that speaker similarity improves as more data is used (unsurprisingly).
 
 They also mention the model being able to recreate reverberation when it's given in ground truth samples. That's very interesting given models like Tacotron2 and FastSpeech2 struggle with reverberation.
+
+---
+
+[ResGrad: Residual Denoising Diffusion Probabilistic Models for Text to Speech](https://arxiv.org/pdf/2212.14518.pdf)
+
+The researchers found that the text-to-speech model FastSpeech2 does not produce sharp/clear spectrograms, especially with challenging speakers or large multi-speaker datasets.
+In order to fix this problem, they train a diffusion model to learn the offset between FastSpeech2's output and the ground truth data. Effectively using the Diffusion model as a postnet.
+They find that it's very effective, as few as 4 sampling steps is enough to improve the MOS from 3.3 to 4.1.
+The authors spend a long time talking about how their method is faster than other Diffusion TTS models, however they seem to completely misunderstand or mis-explain WHY it's faster. The model is faster because their model uses ground truth pitch during training and only outputs 1 pitch value during inference. Because of this, their model can only generate 1 version of each audio file.
+I threw away FastSpeech2 and trained a normal Diffusion model with ground truth pitch as aux input, and it also produces samples in less than 10 steps, while enjoying the significantly simpler architecture design.
