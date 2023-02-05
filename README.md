@@ -82,3 +82,38 @@ They find that despite achieving worse MCD compared to the normal FastSpeech2+Hi
 ![image](https://user-images.githubusercontent.com/42448678/216851211-6f2a50d0-75cb-40ef-8b46-16115c0908e7.png)
 The difference is significant, however I can't say how much of the difference comes from the alignment change and how much comes from training end-to-end without using spectrograms.
 Vocoders are expensive to train so I don't see this architecture becoming common in research anytime soon, but it's still interesting to see and suggests that end-to-end training may be a way to improve audio quality in the future.
+
+---
+
+[StyleTTS: A Style-Based Generative Model for Natural and Diverse Text-to-Speech Synthesis](https://arxiv.org/pdf/2205.15439.pdf)
+
+The researchers propose a Text-to-Speech architecture that can copy a reference audio files prosody/emotion while being given a new piece of text.
+
+At first glance, this architecture appears to be a parallel version of [Global-Style-Tokens](https://arxiv.org/pdf/1803.09017.pdf)
+![image](https://user-images.githubusercontent.com/42448678/216851891-b8dd0886-4fba-4410-9a10-0b78940f5c62.png)
+
+They use Tacotron2's text encoder, and Tacotron2's LSA Attention + LSTM Stack for Alignment during training.
+The style encoder is just 4 ResBlocks followed by a timewise average over each channel.
+Pitch is extracted/used like normal.
+The decoder is 7 ResBlocks using AdaIN normalization
+They use 4 ResBlocks for a spectrogram discriminator.
+They use 3 BiLSTM's with AdaIN for the duration predictor (wow, that's a weird/interesting design decision).
+And they predict the NRG+F0 using GT GSTs and the text.
+
+For some reason they train this model in 2 stages, first they train the Decoder with GT F0 + GT GST, then they freeze most of the model and train the GST, Dur, NRG, F0 predictors
+
+They train on LibriTTS 250 hour dataset with 1151 speakers.
+
+![image](https://user-images.githubusercontent.com/42448678/216852261-00922d4f-ce31-44ff-81c3-2149d137ae0a.png)
+![image](https://user-images.githubusercontent.com/42448678/216852309-564eb523-c7a6-43fd-868a-1b2e3a09e9a3.png)
+
+They show very good MOS values for Naturalness and Similarity. I'm definitely skeptical of their conclusions / results.
+They claim their Style Encoder was able to extract correct emotion from other speakers when the model was trained on a single speaker dataset, yet I don't see anything in their paper that would explain how this is possible.
+
+![image](https://user-images.githubusercontent.com/42448678/216852386-046a55f2-b3fc-451d-ae93-737cb4ec9b8b.png)
+
+They perform lots of Ablations and show that enforcing hard monotonicity is required for parallel architectures to align well (disappointing but expected).
+They also show an extremely large drop in quality when the discriminator is removed, which makes me more interested in their discriminator design. I've tried multiple spectrogram discriminators and while having one is better than none, I've found that there's a lot of room for failure and improvements in disciminator design (e.g: including text encoder information, using 2d convs).
+They also show that their use of Instance Norm is essential for their architecture, however Adapative Instance Norm is not specifically required.
+
+TODO: Check out their [github repo](https://github.com/yl4579/StyleTTS) and clean this section up. The paper is very dense with information and there's too much to understand with a quick skim.
