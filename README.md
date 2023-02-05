@@ -67,3 +67,18 @@ Basically, they add a new loss the will penalize the model if the position in th
 They find that this improves the number of skipped or repeated words and show a minor increase in MOS.
 
 I like this paper. It's an extremely simple technique that just works and doesn't seem to have any downsides (at least with phoneme input text).
+
+---
+
+[JETS: Jointly Training FastSpeech2 and HiFi-GAN for End to End Text to Speech](https://arxiv.org/pdf/2203.16852.pdf)
+
+The researchers find that using seperate Alignment, Text-to-Spectrogram and Vocoder models may reduce the quality of text-to-speech samples.
+(FastSpeech2 has actually tried this before with "FastSpeech2s", however they reported worse scores in their paper.)
+
+For their experiment, they attach FastSpeech2 to HiFiGAN and replace FastSpeech2's hard alignments with a Guassian upsampling aligner.
+They use MAS to compute their alignments and remove the mel-spectrogram loss from FastSpeech2 so there are no spectrograms used in this pipeline.
+LJSpeech with default model/data parameter are used for training.
+They find that despite achieving worse MCD compared to the normal FastSpeech2+HiFiGAN pipeline, they have better F0, MOS and CER.
+![image](https://user-images.githubusercontent.com/42448678/216851211-6f2a50d0-75cb-40ef-8b46-16115c0908e7.png)
+The difference is significant, however I can't say how much of the difference comes from the alignment change and how much comes from training end-to-end without using spectrograms.
+Vocoders are expensive to train so I don't see this architecture becoming common in research anytime soon, but it's still interesting to see and suggests that end-to-end training may be a way to improve audio quality in the future.
