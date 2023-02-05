@@ -55,3 +55,15 @@ In order to fix this problem, they train a diffusion model to learn the offset b
 They find that it's very effective, as few as 4 sampling steps is enough to improve the MOS from 3.3 to 4.1.
 The authors spend a long time talking about how their method is faster than other Diffusion TTS models, however they seem to completely misunderstand or mis-explain WHY it's faster. The model is faster because their model uses ground truth pitch during training and only outputs 1 pitch value during inference. Because of this, their model can only generate 1 version of each audio file.
 I threw away FastSpeech2 and trained a normal Diffusion model with ground truth pitch as aux input, and it also produces samples in less than 10 steps, while enjoying the significantly simpler architecture design.
+
+---
+
+[Regotron: Regularizing the Tacotron2 architecture via monotonic alignment loss](https://arxiv.org/pdf/2204.13437.pdf)
+
+The researchers find that Tacotron2 often learns non-monotonic alignments.
+Inorder to fix this, they calculate the mean text-position of each mel-frames alignment vector, and minimize the negative difference between the position of neighbouring frames.
+Basically, they add a new loss the will penalize the model if the position in the text goes backwards by any amount between mel frames.
+![image](https://user-images.githubusercontent.com/42448678/216850141-5e28c5a7-1c74-473b-aeea-4b2f0e43b670.png)
+They find that this improves the number of skipped or repeated words and show a minor increase in MOS.
+
+I like this paper. It's an extremely simple technique that just works and doesn't seem to have any downsides (at least with phoneme input text).
