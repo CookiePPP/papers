@@ -28,7 +28,7 @@ The EnCodec model can output {1,2,4,8} tokens per timestep depending on the amou
 To improve performance, the CLM only predicts the first token for each timestep autoregressively, then a (non-autoregressive) BERT-large predicts the remaining 7 audio tokens in parallel.
 The authors use a lot of weight/layer sharing among the 7 parallel BERT-large models, presumably to speed up training or reduce parameter count since the task of each model is almost identical.
 
-To train this architecture, they use the Libri-light 60,000 dataset (where an ASR model transcribes each file).
+To train this architecture, they use the Libri-light 60,000 hour dataset (where an ASR model transcribes each file).
 They use 10-20 second slices to train the autoregressive model.
 3 Seconds of ground truth audio tokens are given at the start of sample (so the model can learn the audio conditions and speaker identity for the sample).
 They also provide the phoneme transcript at the start of each sample. Different position embeddings are used for the phoneme transcript to allow the model to align the transcript and audio tokens properly.
