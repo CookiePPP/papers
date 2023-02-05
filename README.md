@@ -34,7 +34,7 @@ They use 10-20 second slices to train the autoregressive model.
 They also provide the phoneme transcript at the start of each sample. Different position embeddings are used for the phoneme transcript to allow the model to align the transcript and audio tokens properly.
 
 Results
-They find that VALL-E has better WER and speaker similarity than YourTTS (zero-shot model based on VITS), however there is still a sigificant distance from ground truth.
+They find that VALL-E has better WER and speaker similarity than YourTTS (zero-shot model based on VITS).
 The MOS values suggest VALL-E has very good audio quality and naturalness.
 ![image](https://user-images.githubusercontent.com/42448678/216848288-2ca87972-9b0f-4aa8-9887-659be660896e.png)
 ![image](https://user-images.githubusercontent.com/42448678/216848300-1132ccb5-ed40-4848-8dfa-e18b7c208fcc.png)
