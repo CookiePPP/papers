@@ -303,3 +303,24 @@ In this paper the researchers evaluate various sampling methods side-by-side
 Read the paper if you want details, there's lots of stuff in this one and the results page doesn't really do it justice.
 
 This paper's architecture could be used to also evaluate the newer VAE and DDPM designs.
+
+---
+
+## [Can we use Common Voice to train a Multi-Speaker TTS system?](https://arxiv.org/pdf/2210.06370.pdf)
+
+The researchers note that Common Voice is full of noise, reverb, incorrect transcripts and thousands of challenging accents/prosodies.
+
+Typically, a TTS model would perform poorly when using the Common Voice dataset.
+The reseachers experiment with using a Deep Learning MOS predictor to filter the dataset and find a subset that is suitable for training TTS models.
+
+![image](https://user-images.githubusercontent.com/42448678/217101970-3a9395e8-8c51-41d1-a984-3f184dceb570.png)
+
+---
+
+Results
+
+![image](https://user-images.githubusercontent.com/42448678/217102279-bd1903ec-0b96-4791-943e-a4500fd3168a.png)
+
+They find that training on a Common Voice subset with pred MOS >= 4.0 gives then better quality AND speaker similarity than the TTS model trained on LibriTTS, and much better results than training on unfiltered Common Voice.
+
+I do think the MOS scores are quite low in all results, but this may be due to their 16Khz vocoder or having a slightly different MOS evaluation system.
