@@ -2,7 +2,7 @@
 
 ---
 
-[PnG BERT: Augmented BERT on Phonemes and Graphemes for Neural TTS](https://arxiv.org/pdf/2103.15060.pdf)
+## [PnG BERT: Augmented BERT on Phonemes and Graphemes for Neural TTS](https://arxiv.org/pdf/2103.15060.pdf)
 
 The researchers train a BERT model on Phoneme+[SEP]+Text inputs with the standard masked language modelling objective.
 They use both word-position and token-position embeddings, along with the usual 2 BERT embeddings for segment A and B.
@@ -19,8 +19,7 @@ Reviewers found that the PnG BERT solution had better prosody and naturalness.
 
 ---
 
-[Neural Codec Language Models are
-Zero-Shot Text to Speech Synthesizers](https://arxiv.org/pdf/2301.02111.pdf) (VALL-E)
+## [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/pdf/2301.02111.pdf) (VALL-E)
 
 Following the success of large language models, the researchers experiment with large speech models.
 They use facebook's "EnCodec" VQVAE model to convert 24Khz audio into descrete audio tokens, then train a BERT-large style model with casual language modelling task on the audio tokens.
@@ -48,7 +47,7 @@ They also mention the model being able to recreate reverberation when it's given
 
 ---
 
-[ResGrad: Residual Denoising Diffusion Probabilistic Models for Text to Speech](https://arxiv.org/pdf/2212.14518.pdf)
+## [ResGrad: Residual Denoising Diffusion Probabilistic Models for Text to Speech](https://arxiv.org/pdf/2212.14518.pdf)
 
 The researchers found that the text-to-speech model FastSpeech2 does not produce sharp/clear spectrograms, especially with challenging speakers or large multi-speaker datasets.
 In order to fix this problem, they train a diffusion model to learn the offset between FastSpeech2's output and the ground truth data. Effectively using the Diffusion model as a postnet.
@@ -58,7 +57,7 @@ I threw away FastSpeech2 and trained a normal Diffusion model with ground truth 
 
 ---
 
-[Regotron: Regularizing the Tacotron2 architecture via monotonic alignment loss](https://arxiv.org/pdf/2204.13437.pdf)
+## [Regotron: Regularizing the Tacotron2 architecture via monotonic alignment loss](https://arxiv.org/pdf/2204.13437.pdf)
 
 The researchers find that Tacotron2 often learns non-monotonic alignments.
 Inorder to fix this, they calculate the mean text-position of each mel-frames alignment vector, and minimize the negative difference between the position of neighbouring frames.
@@ -70,7 +69,7 @@ I like this paper. It's an extremely simple technique that just works and doesn'
 
 ---
 
-[JETS: Jointly Training FastSpeech2 and HiFi-GAN for End to End Text to Speech](https://arxiv.org/pdf/2203.16852.pdf)
+## [JETS: Jointly Training FastSpeech2 and HiFi-GAN for End to End Text to Speech](https://arxiv.org/pdf/2203.16852.pdf)
 
 The researchers find that using seperate Alignment, Text-to-Spectrogram and Vocoder models may reduce the quality of text-to-speech samples.
 (FastSpeech2 has actually tried this before with "FastSpeech2s", however they reported worse scores in their paper.)
@@ -85,7 +84,7 @@ Vocoders are expensive to train so I don't see this architecture becoming common
 
 ---
 
-[StyleTTS: A Style-Based Generative Model for Natural and Diverse Text-to-Speech Synthesis](https://arxiv.org/pdf/2205.15439.pdf)
+## [StyleTTS: A Style-Based Generative Model for Natural and Diverse Text-to-Speech Synthesis](https://arxiv.org/pdf/2205.15439.pdf)
 
 The researchers propose a Text-to-Speech architecture that can copy a reference audio files prosody/emotion while being given a new piece of text.
 
@@ -120,7 +119,7 @@ TODO: Check out their [github repo](https://github.com/yl4579/StyleTTS) and clea
 
 ---
 
-[Differentiable Duration Modeling for End-to-End Text-to-Speech](https://arxiv.org/pdf/2203.11049.pdf)
+## [Differentiable Duration Modeling for End-to-End Text-to-Speech](https://arxiv.org/pdf/2203.11049.pdf)
 
 ![image](https://user-images.githubusercontent.com/42448678/216853590-fda341a6-60fc-4ffd-bc7a-d988f7b4bf5a.png)
 
@@ -129,8 +128,7 @@ The image above says everything you need to know.
 
 ---
 
-[PortaSpeech: Portable and High-Quality
-Generative Text-to-Speech](https://arxiv.org/pdf/2109.15166.pdf)
+## [PortaSpeech: Portable and High-Quality Generative Text-to-Speech](https://arxiv.org/pdf/2109.15166.pdf)
 
 The researchers experiment with various methods of improving TTS quality, reducing model size and increasing throughput.
 
@@ -144,9 +142,7 @@ The postnet significantly improves audio quality, while the VAE+NF latent modell
 
 ---
 
-[Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech](https://arxiv.org/pdf/2105.06337.pdf)
-and
-[Diff-TTS: A Denoising Diffusion Model for Text-to-Speech](https://arxiv.org/pdf/2104.01409.pdf)
+## [Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech](https://arxiv.org/pdf/2105.06337.pdf) and [Diff-TTS: A Denoising Diffusion Model for Text-to-Speech](https://arxiv.org/pdf/2104.01409.pdf)
 
 These are the first papers to apply DDPMs to the text-to-spectrogram task.
 
