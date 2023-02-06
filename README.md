@@ -225,6 +225,7 @@ In this paper they merge;
 - Mixed-Phoneme BERT
 - Parallel tacotron 2: A non-autoregressive neural tts model with differentiable duration modeling
 - VITS
+
 and use a slightly customized NF prior.
 
 ![image](https://user-images.githubusercontent.com/42448678/217080581-4e5e2bca-24ae-4d39-bce4-0febfc059ffc.png)
@@ -250,4 +251,4 @@ They use GT PT HiFiGAN so the Mel Decoder result should be ignored.
 
 The Vocoder result is interesting. Lots of vocoders are better than HiFiGAN and HiFiGAN appears to be almost perfect... so maybe we don't have to waste lots of compute training E2E models in the future after all?
 
-The Phoneme Encoder result is really nice to see. We've now got 9(?) examples of LLM based text encodering massively improving results, so it's clearly one of the next big thinggs to hit open-source.
+The Phoneme Encoder result is really nice to see. We've now got 9(?) examples of LLM based text encodering massively improving results, so it's clearly one of the next big things to hit open-source.
