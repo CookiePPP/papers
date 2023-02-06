@@ -126,3 +126,18 @@ TODO: Check out their [github repo](https://github.com/yl4579/StyleTTS) and clea
 
 The researchers attempt to solve the issue of parallel models requiring external alignment by using the durations from a duration predictor for training the model.
 The image above says everything you need to know.
+
+---
+
+[PortaSpeech: Portable and High-Quality
+Generative Text-to-Speech](https://arxiv.org/pdf/2109.15166.pdf)
+
+The researchers experiment with various methods of improving TTS quality, reducing model size and increasing throughput.
+
+They note that hard-alignments may reduce naturalness since in actual speech phonemes blend together and don't have well defined boundardies. To fix this they add a word encoder and predict word-level durations instead of phoneme level, then they train an attention module to expand the word-level alignments to phoneme-level.
+![image](https://user-images.githubusercontent.com/42448678/216856237-7981f3c2-1ba1-4d9e-9418-9eadf920a2d3.png)
+
+I absolutely love this idea. You get the robustness of hard alignments and the naturalness of soft alignments at the same time, and it doesn't use almost any additional compute. This idea could also be extended to other prosody based features, or added as an additional step for cascading inference like a better FastSpeech2.
+
+They also experiment with using a unconditional VAE to compress the spectrogram, then a conditional NF to infer the VAE latent. I'm not sure why this method has become common but VITS found success with it so I guess it has some merit. They also have a NF Postnet to produce the final spectrogram, which is typically done because VAEs trained with MSE produce blurry outputs.
+The postnet significantly improves audio quality, while the VAE+NF latent modelling significantly improves prosody.
