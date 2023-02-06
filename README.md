@@ -153,3 +153,16 @@ Grad-TTS uses a UNet architecture while Diff-TTS uses Gated WaveNet blocks.
 ![image](https://user-images.githubusercontent.com/42448678/216861533-07283dcc-641c-488b-91cf-d7b893834c0a.png)
 
 Both papers report SOTA results, with Diff-TTS getting BETTER THAN GT MOS values. Crazy stuff.
+
+---
+
+## [ON GRANULARITY OF PROSODIC REPRESENTATIONS IN EXPRESSIVE TEXT-TO-SPEECH](https://arxiv.org/pdf/2301.11446.pdf)
+
+![image](https://user-images.githubusercontent.com/42448678/216903283-7626112f-c38d-48aa-b97b-2aeea892300a.png)
+
+The researchers experiment with a word-level VAE for encoding prosody of the text.
+They find that phoneme-level prosody is hard to predict from text, while utterance level prosody doesn't contain enough information to improve the decoder's results.
+To convert the VAE frame-level latents to word-level, they select the middle mel-frame in each word instead of using an RNN or other seq2vec technique.
+They use a pretrained BERT model to predict the VAE's latents for inference and achieve extremely good MOS results.
+
+![image](https://user-images.githubusercontent.com/42448678/216904014-fdc96428-2b6f-4cd0-a834-b7cdefcc3caf.png)
