@@ -174,6 +174,7 @@ They use a pretrained BERT model to predict the VAE's latents for inference and 
 In Guided-TTS2 the researchers experiment with training a large diffusion model on unlabelled Librispeech 60,000 hours dataset.
 They train the DDPM with speaker embeddings taken from a pretrained speaker encoder.
 They train the DDPM without conditioning during some of the samples so they can use Classifier-Free-Guidance during inference to closer match the encoded speaker embedding.
+No text is used to train the DDPM.
 
 ![image](https://user-images.githubusercontent.com/42448678/217060867-d2342b53-1d23-4699-b53b-be69e711ee53.png)
 
