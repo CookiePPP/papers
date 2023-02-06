@@ -288,3 +288,18 @@ The Phoneme Encoder result is really nice to see. We've now got 9(?) examples of
 
 </details>
   
+---
+
+## [Revisiting Over-Smoothness in Text to Speech](https://arxiv.org/pdf/2202.13066.pdf)
+
+In this paper the researchers evaluate various sampling methods side-by-side
+
+![image](https://user-images.githubusercontent.com/42448678/217098977-4c1ec41e-8a32-4b72-bd73-5e52cf1c6401.png)
+
+![image](https://user-images.githubusercontent.com/42448678/217099014-dd4a2f35-a05e-44bd-93d4-d9a9c0461bd1.png)
+
+![image](https://user-images.githubusercontent.com/42448678/217099034-a8e132ac-3f3f-42db-94d9-65c0822374aa.png)
+
+Read the paper if you want details, there's lots of stuff in this one and the results page doesn't really do it justice.
+
+This paper's architecture could be used to also evaluate the newer VAE and DDPM designs.
