@@ -38,11 +38,13 @@ The MOS values suggest VALL-E has very good audio quality and naturalness.
 
 ![image](https://user-images.githubusercontent.com/42448678/216848288-2ca87972-9b0f-4aa8-9887-659be660896e.png)
 
+![image](https://user-images.githubusercontent.com/42448678/216848300-1132ccb5-ed40-4848-8dfa-e18b7c208fcc.png)
+
 Thoughts: The WER rate should be ignored in this paper since the model is trained on ASR transcriptions. If the dataset transcripts were created using the same model that was used to evaluate the WER rate then the WER rate may be inflated/incorrect.
 
 They also evaluated speaker similarity using 5s and 10s ground truth tokens for input and found that speaker similarity improves as more data is used (unsurprisingly).
 
-![image](https://user-images.githubusercontent.com/42448678/216848300-1132ccb5-ed40-4848-8dfa-e18b7c208fcc.png)
+![image](https://user-images.githubusercontent.com/42448678/217071911-8237fef7-d001-42ca-bbd9-0b3770a9393f.png)
 
 They also mention the model being able to recreate reverberation when it's given in ground truth samples. That's very interesting given models like Tacotron2 and FastSpeech2 struggle with reverberation.
 
