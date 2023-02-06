@@ -200,6 +200,6 @@ Their results are very impressive, outperforming YourTTS, StyleSpeech and matchi
 
 https://ksw0306.github.io/guided-tts2-demo/
 
-Listening to their demo samples, I notice each sample sounds very clear and well paced, however emotion seems to be completely missing. It takes sense given their method, but I am curious if semantic information could be added to their method while still being able to train on Librilight.
+Listening to their demo samples, I notice each sample sounds very clear and well paced, however emotion seems to be completely missing. It makes sense given their method, but I am curious if semantic information could be added to their method while still being able to train on Librilight. (maybe Whisper(?) transcribed audio, but with a 'AI Transcript' and 'Human Transcript' label added?)
 
 ---
