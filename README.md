@@ -190,7 +190,7 @@ To make outputs closer to the reference speaker, they use Classifier-Free-Guidan
 
 ![image](https://user-images.githubusercontent.com/42448678/217062367-6058bc86-8f3a-4cb1-8d45-facaae4334ae.png)
 
-Unless otherwise specified, they also fine-tune the DDPM model on the reference files. This gives a very large improvement in speaker similarity without affecting text accuracy at lower CFGs.
+Unless otherwise specified, they also fine-tune the DDPM model on the reference files. This gives a very large improvement in speaker similarity without affecting text accuracy at lower CFGs. (Yellow vs Blue line in the above images)
 
 ---
 
