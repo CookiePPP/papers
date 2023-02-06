@@ -196,7 +196,7 @@ Unless otherwise specified, they also fine-tune the DDPM model on the reference 
 
 ![image](https://user-images.githubusercontent.com/42448678/217063373-ab7e0f69-59ce-46a8-9584-76bfdb283607.png)
 
-Their results are very impressive, outperforming YourTTS, StyleSpeech and matching or exceeding GT in MOS. They archieve slightly below GT speaker similarity, but still significantly better than the competition. Their CER results might be misleading though since they use a pretrained ASR model to guide their DDPM.
+Their results are very impressive, outperforming YourTTS, StyleSpeech and matching or exceeding GT in MOS. They achieve slightly below GT speaker similarity, but still significantly better than the competition. Their CER results might be misleading though since they use a pretrained ASR model to guide their DDPM.
 
 https://ksw0306.github.io/guided-tts2-demo/
 
