@@ -203,3 +203,9 @@ https://ksw0306.github.io/guided-tts2-demo/
 Listening to their demo samples, I notice each sample sounds very clear and well paced, however emotion seems to be completely missing. It makes sense given their method, but I am curious if semantic information could be added to their method while still being able to train on Librilight. (maybe Whisper(?) transcribed audio, but with a 'AI Transcript' and 'Human Transcript' label added?)
 
 ---
+
+![image](https://user-images.githubusercontent.com/42448678/217069712-2307ca13-1a8c-402c-8c29-0254b7a5763b.png)
+
+Also super interesting, they find that resetting the optimizer improves fine-tuning results significantly.
+
+---
