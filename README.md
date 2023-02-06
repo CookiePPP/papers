@@ -240,7 +240,7 @@ They do not however show GT MEL + HiFiGAN, so as far as I know, Grad-TTS/Glow-TT
 
 ![image](https://user-images.githubusercontent.com/42448678/217080976-dba517bd-9532-4e9c-b9dc-ad8df0d48505.png)
 
-They show that each change they propose has a minor positive impact on the MOS.
+They show that each change has a minor positive impact on the MOS. Phoneme Pretraining and Differentiable Durator come from Mixed-Phoneme BERT and Parallel tacotron 2 respectively.
 
 ---
 
