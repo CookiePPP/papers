@@ -166,3 +166,39 @@ To convert the VAE frame-level latents to word-level, they select the middle mel
 They use a pretrained BERT model to predict the VAE's latents for inference and achieve extremely good MOS results.
 
 ![image](https://user-images.githubusercontent.com/42448678/216904014-fdc96428-2b6f-4cd0-a834-b7cdefcc3caf.png)
+
+---
+
+## [Guided-TTS 2: A Diffusion Model for High-quality Adaptive Text-to-Speech with Untranscribed Data](https://arxiv.org/pdf/2205.15370.pdf)
+
+In Guided-TTS2 the researchers experiment with training a large diffusion model on unlabelled Librispeech 60,000 hours dataset.
+They train the DDPM with speaker embeddings taken from a pretrained speaker encoder.
+They train the DDPM without conditioning during some of the samples so they can use Classifier-Free-Guidance during inference to closer match the encoded speaker embedding.
+
+![image](https://user-images.githubusercontent.com/42448678/217060867-d2342b53-1d23-4699-b53b-be69e711ee53.png)
+
+---
+
+Inference
+
+They use a pretrained phoneme classifier to guide the DDPM towards the text for inference.
+
+To make outputs closer to the reference speaker, they use Classifier-Free-Guidance. They notice that CFG reduces the text accuracy but increases the speaker similarity and settle on CFG scale of 1.0 for their evaluations.
+
+![image](https://user-images.githubusercontent.com/42448678/217061875-3ca8d0f0-10bd-4012-b3f7-e56954e316f8.png)
+
+![image](https://user-images.githubusercontent.com/42448678/217062367-6058bc86-8f3a-4cb1-8d45-facaae4334ae.png)
+
+Unless otherwise specified, they also fine-tune the DDPM model on the reference files. This gives a very large improvement in speaker similarity without affecting text accuracy at lower CFGs.
+
+---
+
+![image](https://user-images.githubusercontent.com/42448678/217063373-ab7e0f69-59ce-46a8-9584-76bfdb283607.png)
+
+Their results are very impressive, outperforming YourTTS, StyleSpeech and matching or exceeding GT in MOS. They archieve slightly below GT speaker similarity, but still significantly better than the competition. Their CER results might be misleading though since they use a pretrained ASR model to guide their DDPM.
+
+https://ksw0306.github.io/guided-tts2-demo/
+
+Listening to their demo samples, I notice each sample sounds very clear and well paced, however emotion seems to be completely missing. It takes sense given their method, but I am curious if semantic information could be added to their method while still being able to train on Librilight.
+
+---
