@@ -221,6 +221,11 @@ TODO: This.
 
 ## [NaturalSpeech: End-to-End Text to Speech Synthesis with Human-Level Quality](https://arxiv.org/pdf/2205.04421.pdf) (Clickbate title 👏)
 
+In this paper the researchers show that Mixed-Phoneme BERT and Parallel Tacotron2 results are reproducible. The researchers also propose a new architecture with "Bidirectional Prior/Posterior" and "VAE with Memory" however in my opinion they do not show how these techniques compare to existing methods properly.
+
+<details>
+  <summary>Click for Details</summary>
+
 In this paper they merge;
 - Mixed-Phoneme BERT
 - Parallel tacotron 2: A non-autoregressive neural tts model with differentiable duration modeling
@@ -252,3 +257,6 @@ They use GT PT HiFiGAN so the Mel Decoder result should be ignored.
 The Vocoder result is interesting. Lots of vocoders are better than HiFiGAN and HiFiGAN appears to be almost perfect... so maybe we don't have to waste lots of compute training E2E models in the future after all?
 
 The Phoneme Encoder result is really nice to see. We've now got 9(?) examples of LLM based text encodering massively improving results, so it's clearly one of the next big things to hit open-source.
+
+</details>
+  
