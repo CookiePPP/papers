@@ -215,7 +215,27 @@ Also super interesting, they find that resetting the optimizer improves fine-tun
 
 ## [Mixed-Phoneme BERT: Improving BERT with Mixed Phoneme and Sup-Phoneme Representations for Text to Speech](https://arxiv.org/pdf/2203.17190.pdf)
 
-TODO: This.
+This paper continues the research of PnG BERT in Prosody/Pronunciation prediction using Large Language Models.
+
+They experiment with training a BERT model with only phonemes. They use BPE to create a large vocabulary and train with both sub-phonemes and phonemes as can be seen in the image below.
+
+![image](https://user-images.githubusercontent.com/42448678/217095512-4de69ca0-1bac-4e18-ae18-9beee818de16.png)
+
+They show that
+![image](https://user-images.githubusercontent.com/42448678/217095685-071085af-20bd-4674-9f79-65230d262df4.png)
+removing the text side of the model/input significantly improves performance without any decrease in MOS.
+
+They show that
+![image](https://user-images.githubusercontent.com/42448678/217095911-a70badb5-6c95-45fe-be0a-3c8664d62eb3.png)
+the sub-phoneme vocabulary is required for the LLM to learn the required information.
+
+The results are great and show that their method is recommended if have phonemes available for inference or a dataset with a common nationality/accent.
+
+---
+
+> The TTS front-end normalizes the sentences and converts them into phoneme sequences.
+
+Since they use a generic g2p algorithm for inference, this approach may not work as well with strong accented speakers or a very diverse multispeaker dataset.
 
 ---
 
