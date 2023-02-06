@@ -221,9 +221,13 @@ They experiment with training a BERT model with only phonemes. They use BPE to c
 
 ![image](https://user-images.githubusercontent.com/42448678/217095512-4de69ca0-1bac-4e18-ae18-9beee818de16.png)
 
+---
+
 They show that
 ![image](https://user-images.githubusercontent.com/42448678/217095685-071085af-20bd-4674-9f79-65230d262df4.png)
 removing the text side of the model/input significantly improves performance without any decrease in MOS.
+
+---
 
 They show that
 ![image](https://user-images.githubusercontent.com/42448678/217095911-a70badb5-6c95-45fe-be0a-3c8664d62eb3.png)
