@@ -212,3 +212,42 @@ Listening to their demo samples, I notice each sample sounds very clear and well
 Also super interesting, they find that resetting the optimizer improves fine-tuning results significantly.
 
 ---
+
+## [Mixed-Phoneme BERT: Improving BERT with Mixed Phoneme and Sup-Phoneme Representations for Text to Speech](https://arxiv.org/pdf/2203.17190.pdf)
+
+TODO: This.
+
+---
+
+## [NaturalSpeech: End-to-End Text to Speech Synthesis with Human-Level Quality](https://arxiv.org/pdf/2205.04421.pdf) (Clickbate title 👏)
+
+In this paper they merge;
+- Mixed-Phoneme BERT
+- Parallel tacotron 2: A non-autoregressive neural tts model with differentiable duration modeling
+- VITS
+and use a slightly customized NF prior.
+
+![image](https://user-images.githubusercontent.com/42448678/217080581-4e5e2bca-24ae-4d39-bce4-0febfc059ffc.png)
+
+![image](https://user-images.githubusercontent.com/42448678/217089226-4ada8ad3-05ae-48d0-90f4-fa28a25c93ae.png)
+
+
+They train their model on LJSpeech and get almost perfect MOS values.
+They do not however show GT MEL + HiFiGAN, so as far as I know, Grad-TTS/Glow-TTS is actually better than NaturalSpeech and they're just being held back by the Vocoder. Rather frustrating that they spend so much of the paper on their sampling method, but don't ever perform an apples-to-apples comparison to show if it's actually any better.
+
+---
+
+![image](https://user-images.githubusercontent.com/42448678/217080976-dba517bd-9532-4e9c-b9dc-ad8df0d48505.png)
+
+They show that each change they propose has a minor positive impact on the MOS.
+
+---
+
+![image](https://user-images.githubusercontent.com/42448678/217083087-ace2668c-9694-46e3-875d-7996f2fd53b2.png)
+
+They evaluate FastSpeech2 + HifiGANV1 and show how train/inference mismatch at each stage results in lower in MOS scores.
+They use GT PT HiFiGAN so the Mel Decoder result should be ignored.
+
+The Vocoder result is interesting. Lots of vocoders are better than HiFiGAN and HiFiGAN appears to be almost perfect... so maybe we don't have to waste lots of compute training E2E models in the future after all?
+
+The Phoneme Encoder result is really nice to see. We've now got 9(?) examples of LLM based text encodering massively improving results, so it's clearly one of the next big thinggs to hit open-source.
