@@ -141,3 +141,19 @@ I absolutely love this idea. You get the robustness of hard alignments and the n
 
 They also experiment with using a unconditional VAE to compress the spectrogram, then a conditional NF to infer the VAE latent. I'm not sure why this method has become common but VITS found success with it so I guess it has some merit. They also have a NF Postnet to produce the final spectrogram, which is typically done because VAEs trained with MSE produce blurry outputs.
 The postnet significantly improves audio quality, while the VAE+NF latent modelling significantly improves prosody.
+
+---
+
+[Grad-TTS: A Diffusion Probabilistic Model for Text-to-Speech](https://arxiv.org/pdf/2105.06337.pdf)
+and
+[Diff-TTS: A Denoising Diffusion Model for Text-to-Speech](https://arxiv.org/pdf/2104.01409.pdf)
+
+These are the first papers to apply DDPMs to the text-to-spectrogram task.
+
+Grad-TTS uses a UNet architecture while Diff-TTS uses Gated WaveNet blocks.
+
+![image](https://user-images.githubusercontent.com/42448678/216861491-e7a0f231-1760-4964-a3c9-540c11ebc4dd.png)
+
+![image](https://user-images.githubusercontent.com/42448678/216861533-07283dcc-641c-488b-91cf-d7b893834c0a.png)
+
+Both papers report SOTA results, with Diff-TTS getting BETTER THAN GT MOS values. Crazy stuff.
