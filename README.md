@@ -117,3 +117,12 @@ They also show an extremely large drop in quality when the discriminator is remo
 They also show that their use of Instance Norm is essential for their architecture, however Adapative Instance Norm is not specifically required.
 
 TODO: Check out their [github repo](https://github.com/yl4579/StyleTTS) and clean this section up. The paper is very dense with information and there's too much to understand with a quick skim.
+
+---
+
+[Differentiable Duration Modeling for End-to-End Text-to-Speech](https://arxiv.org/pdf/2203.11049.pdf)
+
+![image](https://user-images.githubusercontent.com/42448678/216853590-fda341a6-60fc-4ffd-bc7a-d988f7b4bf5a.png)
+
+The researchers attempt to solve the issue of parallel models requiring external alignment by using the durations from a duration predictor for training the model.
+The image above says everything you need to know.
