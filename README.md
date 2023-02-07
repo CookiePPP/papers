@@ -329,16 +329,45 @@ I do think the MOS scores are quite low in all results, but this may be due to t
 
 ## [PHONEME-LEVEL BERT FOR ENHANCED PROSODY OF TEXT-TO-SPEECH WITH GRAPHEME PREDICTIONS](https://arxiv.org/pdf/2301.08810.pdf)
 
-TODO
+In this paper the researchers train a ALBERT model on phonemes with MLM task, and also P2G aux task.
+
+![image](https://user-images.githubusercontent.com/42448678/217370051-fb54f9ec-2c63-46be-8a28-498857f91164.png)
+
+They use a similar dataset to previous papers in this area, however for SOME REASON, they don't include MOS values from in domain samples.
+
+![image](https://user-images.githubusercontent.com/42448678/217370425-97ec0cc4-dbc1-421f-bf98-4934340be278.png)
+
+They also ONLY FINE TUNE ONE OF THE MODELS. They fine tune PL-BERT (theirs) but leave MP-BERT completely frozen. Ridiculous paper.
+
+![image](https://user-images.githubusercontent.com/42448678/217370527-0dc13085-524b-4123-97b5-801b9b4b0079.png)
 
 ---
 
-## [The VoiceMOS Challenge 2022]([The VoiceMOS Challenge 2022](https://arxiv.org/pdf/2203.11389.pdf))
+![image](https://user-images.githubusercontent.com/42448678/217370817-dbfd942e-0b28-4617-b71b-f241f09833cb.png)
+
+They show that PL-BERT > PL-BERT-without-P2G > PL-BERT-without-MLM > BERT > Nothing. It has been shown in other papers before but it's nice to have another confirmation.
+
+This paper leaves me with more questions than answers (in a bad way). Someone will need to evaluate
+- ALBERT against BERT
+- fine-tuning against frozen
+- P2G + P-MLM vs G+P-MLM
+
+seperately in order to identify if the method outlined in this paper is actually an improvement or not.
+
+---
+
+## [The VoiceMOS Challenge 2022](https://arxiv.org/pdf/2203.11389.pdf)
 
 TODO
 
 ---
 
 ## [SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing](https://arxiv.org/pdf/2110.07205.pdf)
+
+TODO
+
+---
+
+## [FastDiff: A Fast Conditional Diffusion Model for High-Quality Speech Synthesis](https://arxiv.org/pdf/2204.09934.pdf)
 
 TODO
