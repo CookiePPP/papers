@@ -345,7 +345,7 @@ They also ONLY FINE TUNE ONE OF THE MODELS. They fine tune PL-BERT (theirs) but 
 
 ![image](https://user-images.githubusercontent.com/42448678/217370817-dbfd942e-0b28-4617-b71b-f241f09833cb.png)
 
-They show that PL-BERT > PL-BERT-without-P2G > PL-BERT-without-MLM > BERT > Nothing. It has been shown in other papers before but it's nice to have another confirmation.
+They show that PL-BERT > PL-BERT-without-P2G > BERT > PL-BERT-without-MLM > Nothing. It has been shown in other papers before but it's nice to have another confirmation.
 
 This paper leaves me with more questions than answers (in a bad way). Someone will need to evaluate
 - ALBERT against BERT
