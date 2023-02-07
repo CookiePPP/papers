@@ -324,3 +324,21 @@ Results
 They find that training on a Common Voice subset with pred MOS >= 4.0 gives then better quality AND speaker similarity than the TTS model trained on LibriTTS, and much better results than training on unfiltered Common Voice.
 
 I do think the MOS scores are quite low in all results, but this may be due to their 16Khz vocoder or having a slightly different MOS evaluation system.
+
+---
+
+## [PHONEME-LEVEL BERT FOR ENHANCED PROSODY OF TEXT-TO-SPEECH WITH GRAPHEME PREDICTIONS](https://arxiv.org/pdf/2301.08810.pdf)
+
+TODO
+
+---
+
+## [The VoiceMOS Challenge 2022]([The VoiceMOS Challenge 2022](https://arxiv.org/pdf/2203.11389.pdf))
+
+TODO
+
+---
+
+## [SpeechT5: Unified-Modal Encoder-Decoder Pre-Training for Spoken Language Processing](https://arxiv.org/pdf/2110.07205.pdf)
+
+TODO
