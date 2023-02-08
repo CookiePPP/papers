@@ -399,6 +399,6 @@ Conclusion:
 In this paper ...
 
 They use w2v-BERT to convert audio into semantic (text) tokens.
-They use SoundStream to convert audio into compressed form. Similar to EnCodec VQVAE used by VALL-E.
+They use SoundStream to convert audio into and out-of compressed form. Similar to EnCodec VQVAE used by VALL-E.
 
 They use extensive pre-training with each model to significantly improve results.
