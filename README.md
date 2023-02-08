@@ -371,3 +371,34 @@ TODO
 ## [FastDiff: A Fast Conditional Diffusion Model for High-Quality Speech Synthesis](https://arxiv.org/pdf/2204.09934.pdf)
 
 TODO
+
+---
+
+## [Learning to Maximize Speech Quality Directly Using MOS Prediction for Neural Text-to-Speech](https://arxiv.org/pdf/2011.01174.pdf)
+
+TODO
+
+---
+
+## [wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations](https://arxiv.org/pdf/2006.11477.pdf)
+
+![image](https://user-images.githubusercontent.com/42448678/217457870-9a4481f4-31af-44c2-b51a-1f173ea79bf3.png)
+
+In this paper the researchers show a new self-supervised technique to pretrain models for ASR task.
+They train an encoder to convert raw waveforms into Q (a codebook like VQVAE), and they train a (randomly masked input) Transformer with contrastive loss objective, to output a pred Q that is close to the GT Q and distant from randomly selected Q's from other frames.
+To stop the encoder from outputting the same Q for every frame, they use an additional Diversity Loss term.
+
+Conclusion:
+
+> Our model achieves results which achieve a new state of the art on the full Librispeech benchmark for noisy speech. On the clean 100 hour Librispeech setup, wav2vec 2.0 outperforms the previous best result while using 100 times less labeled data. The approach is also effective when large amounts of labeled data are available. 
+
+---
+
+## [SPEAR-TTS: Speak, Read and Prompt: High-Fidelity Text-to-Speech with Minimal Supervision](https://arxiv.org/pdf/2302.03540.pdf)
+
+In this paper ...
+
+They use w2v-BERT to convert audio into semantic (text) tokens.
+They use SoundStream to convert audio into compressed form. Similar to EnCodec VQVAE used by VALL-E.
+
+They use extensive pre-training with each model to significantly improve results.
