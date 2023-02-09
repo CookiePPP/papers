@@ -467,3 +467,13 @@ They find a significant improvement in zero-shot TTS performance from this chang
 ![image](https://user-images.githubusercontent.com/42448678/217793569-9bbeaa1a-0ca1-4c35-9f53-f5908a07ed82.png)
 
 and find that their VC fails without the TTS encoder constraint.
+
+---
+
+## [DailyTalk: Spoken Dialogue Dataset for Conversational Text-to-Speech](https://arxiv.org/pdf/2207.01063.pdf)
+
+This the first relatively large conversational speech dataset I've seen.
+
+![image](https://user-images.githubusercontent.com/42448678/217798952-6a0d9c89-4262-4ff2-8297-1215ce2f0ec5.png)
+
+It has 20 hours of audio with emotion labels included.
