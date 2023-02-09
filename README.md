@@ -401,3 +401,42 @@ They use w2v-BERT to convert audio into semantic (text) tokens.
 They use SoundStream to convert audio into and out-of compressed form. Similar to EnCodec VQVAE used by VALL-E.
 
 They use extensive pre-training with each model to significantly improve results.
+
+---
+
+## [A Vector Quantized Approach for Text to Speech Synthesis on Real-World Spontaneous Speech](https://arxiv.org/pdf/2302.04215.pdf) (MQTTS)
+
+[OFFICIAL CODE HERE](https://github.com/b04901014/MQTTS)
+
+The researchers train common TTS models on YouTube and Podcasts subset of the GigaSpeech dataset.
+They also propose their own architecture, MQTTS (multi-codebook vector quantized TTS), which uses Tranformer-TTS but with a codebook instead of spectrograms and a modified alignment/attention setup.
+The multi-codebook is created using HiFi-GAN as a VQVAE-style autoencoder. The codebook is similar to SoundStream and EnCodec where multiple codebooks learn progressively more detailed information, and the AR model learns to predict the first codebook index before a conditional parallel model predicts the remaining ones in a code-AR order instead of time-AR.
+They remove lower cross-attention layers from Transformer-TTS since they believe/find that only the higher level representations are processed enough to align cleanly/properly.
+They use [ALiBi](https://arxiv.org/abs/2108.12409) position encoding scheme to allow their TTS model to extrapolate to text/audio lengths unseen during training.
+A simple trick they use to improve inference quality is appending 3 seconds of silence to the start of the time-AR inference model.
+
+---
+
+![image](https://user-images.githubusercontent.com/42448678/217774905-1c4fec78-7c8b-4683-86ad-8f3c2c030adc.png)
+
+They show that using multiple smaller codebooks performs better than 1 extremely large codebook. (MOS-Q = Audio Quality, MOS-N = Naturalness)
+
+---
+
+They use a large suite of models/techniques to evaluate their results so I will outline them here.
+P-FID is a FID metric using a pretrained emotion classifier which roughly correlates with Prosody Distance between GT and PRED samples.
+SSS is speaker similarity measured as Cosine Similarity with a pretrained speaker encoder.
+MOS-N is a Mean Opinion Score where the raters are specifically asked to rate the naturalness of the samples.
+
+
+![image](https://user-images.githubusercontent.com/42448678/217775543-60bd041f-2c5d-48f3-b5e3-ac0528e37d22.png)
+
+They find that
+- VITS and MQTTS perform well on the YouTube+Podcasts
+- Transformer-TTS performs poorly, even with refined attention or duration predictor
+- VITS gets better Audio Quality
+- MQTTS gets significantly better Prosody/Emotion
+- MQTTS gains a lot of audio quality by code-AR predicting the extra 3 codebooks.
+- MQTTS gains a lot from the monotonic alignment constraint (as previously shown in Regotron)
+
+They also spend a bit talking about duration predictor resulting in abrupt transitions with AR models, however as I've tested before, all you need is a couple of high kernel size convs on the cond and that problem fixes itself.
