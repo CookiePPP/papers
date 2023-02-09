@@ -440,3 +440,30 @@ They find that
 - MQTTS gains a lot from the monotonic alignment constraint (as previously shown in Regotron)
 
 They also spend a bit talking about duration predictor resulting in abrupt transitions with AR models, however as I've tested before, all you need is a couple of high kernel size convs on the cond and that problem fixes itself.
+
+---
+
+## [UNIFYSPEECH: A UNIFIED FRAMEWORK FOR ZEROSHOT TEXT-TO-SPEECH AND VOICE CONVERSION](https://arxiv.org/pdf/2301.03801.pdf)
+
+The researchers propose a shared TTS/VC model.
+They split speech into 3 components.
+- Speaker(and recording conditions)
+- Content(text)
+- Prosody(how the speaker says the text)
+
+![image](https://user-images.githubusercontent.com/42448678/217788606-61108252-09d6-412a-81ac-b3eafe44db45.png)
+
+For "prosody", they use f0 taken from gt audio. Since f0 is speaker dependant, they train a speaker-conditioned f0 predictor to replace the gt f0 during inference.
+
+Their main enhancement is training the TTS text encoder and VC content encoder to use a shared codebook and close output representations.
+By doing this, the voice conversion model is forced to encode textual information into the content encoder and all the global information is rerouted to the shared speaker encoder.
+
+---
+
+![image](https://user-images.githubusercontent.com/42448678/217793473-6280ec18-d6dd-43ad-8c10-d4b4884e6b4b.png)
+
+They find a significant improvement in zero-shot TTS performance from this change.
+
+![image](https://user-images.githubusercontent.com/42448678/217793569-9bbeaa1a-0ca1-4c35-9f53-f5908a07ed82.png)
+
+and find that their VC fails without the TTS encoder constraint.
