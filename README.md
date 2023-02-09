@@ -386,7 +386,6 @@ TODO
 
 In this paper the researchers show a new self-supervised technique to pretrain models for ASR task.
 They train an encoder to convert raw waveforms into Q (a codebook like VQVAE), and they train a (randomly masked input) Transformer with contrastive loss objective, to output a pred Q that is close to the GT Q and distant from randomly selected Q's from other frames.
-To stop the encoder from outputting the same Q for every frame, they use an additional Diversity Loss term.
 
 Conclusion:
 
