@@ -227,7 +227,7 @@ They experiment with training a BERT model with only phonemes. They use BPE to c
 
 The results are impressive and match PnG BERT. Original text encoder shows 3.75 MOS, randn init MP-BERT shows 3.9 MOS, and pretrained MP-BERT shows 4.04 MOS.
 
-The pretrained MP BERT text encoder achieves BETTER than GT MOS values. A second paper to go with PnG BERT that shows the importance pretraining the text encoder if possible.
+The pretrained MP BERT text encoder achieves BETTER than GT MOS values. A second paper to go with PnG BERT that shows the importance of pretraining the text encoder if possible.
 
 ---
 
@@ -245,7 +245,7 @@ They show that
 
 the sub-phoneme vocabulary is required for the LLM to learn the required information.
 
-The results are great and show that their method is recommended if have phonemes available for inference or a dataset with a common nationality/accent.
+The results are great and show that their method is recommended if you have phonemes available for inference or a dataset with a common nationality/accent.
 
 ---
 
