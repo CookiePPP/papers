@@ -223,6 +223,14 @@ They experiment with training a BERT model with only phonemes. They use BPE to c
 
 ---
 
+![image](https://user-images.githubusercontent.com/42448678/218281254-b3ac4a86-3772-43d5-9971-054df22f8b4e.png)
+
+The results are impressive and match PnG BERT. Original text encoder shows 3.75 MOS, randn init MP-BERT shows 3.9 MOS, and pretrained MP-BERT shows 4.04 MOS.
+
+The pretrained MP BERT text encoder achieves BETTER than GT MOS values. A second paper to go with PnG BERT that shows the importance pretraining the text encoder if possible.
+
+---
+
 They show that
 
 ![image](https://user-images.githubusercontent.com/42448678/217095685-071085af-20bd-4674-9f79-65230d262df4.png)
