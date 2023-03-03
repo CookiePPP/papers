@@ -17,6 +17,12 @@ Results
 The baseline is slightly worse than ground truth. The PnG-BERT augmented solution is better/equal to ground truth.
 Reviewers found that the PnG BERT solution had better prosody and naturalness.
 
+UPDATE:
+
+I created https://github.com/CookiePPP/pngnw_bert where I experimented with my own modified version of PnG BERT and found;
+- PnG BERT uses significantly more compute than normal BERT. The input length is around 6x longer when using chars+phones instead of just wordpieces.
+- fine-tuned PnG BERT performs about on par with fine-tuned normal BERT + DeepMoji + G2p. It's important to include a language model for emotive TTS, but there seems to be nothing about PnG BERT that makes it especially better that other language models.
+
 ---
 
 ## [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/pdf/2301.02111.pdf) (VALL-E)
